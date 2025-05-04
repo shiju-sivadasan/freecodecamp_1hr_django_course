@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+
+    <h1>Menu Items</h1>
+    <br>
+    <!--Begin row-->
+    {% for item in menu %}
+    <div>
+        <h3><a href="{% url 'menu_item' pk=item.id %}">{{ item.name }}</a></h3>
+        <br>
+        <p><b>{{ item.price }}</b></p>
+        {% comment %} <article>{{ item.description }}</article> {% endcomment %}
+    </div>
+    {% comment %} <br> {% endcomment %}
+    {% endfor %}
+</section>
+{% endblock %}
